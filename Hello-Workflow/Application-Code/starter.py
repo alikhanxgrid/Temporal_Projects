@@ -1,4 +1,5 @@
 import asyncio
+import sys
 
 from greeting import GreetSomeone
 from temporalio.client import Client
@@ -12,7 +13,7 @@ async def main():
 
     result = await client.execute_workflow(
         GreetSomeone.run,
-        "Ali",
+        sys.argv[1],
         id="greeting-workflow",
         task_queue="greeting-tasks",
     )
