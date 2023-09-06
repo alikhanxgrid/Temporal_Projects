@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hello-workflow
+  name: hello-workflow
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-workflow
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hello-workflow
+    spec:
+      containers:
+      - image: khanali198361/hello_workflow
+        name: hello-workflow
+        resources: {}
+status: {}
